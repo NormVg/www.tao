@@ -1,7 +1,10 @@
 <template>
  <NuxtPage />
+<Analytics />
 </template>
 <script setup>
+import { Analytics } from '@vercel/analytics/nuxt'
+
 useSeoMeta({
   title: 'TheAlphaOnes — Building the Future of Software',
   description: 'A startup-in-the-making, crafting developer tools, AI projects, and bold ideas shaping the next generation of technology.',
