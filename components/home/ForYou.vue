@@ -2,6 +2,7 @@
 import AppCard from '../card/AppCard.vue';
 
 
+
 import Flower2 from "~/assets/flower-2.svg"
 </script>
 
@@ -21,7 +22,8 @@ import Flower2 from "~/assets/flower-2.svg"
 
   </div>
 
-  <img :src="Flower2" alt="flower 2" class="flower-2">
+
+  <img :src="Flower2" alt="flower 2" class="flower-2" @click="() => scrollToElement('#main-box')">
 </template>
 
 
@@ -34,10 +36,15 @@ import Flower2 from "~/assets/flower-2.svg"
 .bg{
   font-size: 250px;
   opacity: 0.25;
+  user-select: none;
+
 }
 
 main{
-  margin-top: -125px;
+  /* margin-top: -125px; */
+  z-index: 100;
+  position: relative;
+  top: -125px;
 }
 
 
@@ -58,6 +65,23 @@ margin-top: 125px;
   to {
     transform: rotate(360deg);
   }
+}
+
+
+@media only screen and (max-width: 768px) {
+.bg{
+  font-size: 100px;
+  opacity: 0.25;
+  user-select: none;
+
+}
+
+main{
+  /* margin-top: -125px; */
+  z-index: 100;
+  position: relative;
+  top: 10px;
+}
 }
 
 

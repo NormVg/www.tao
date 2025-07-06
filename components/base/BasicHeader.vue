@@ -1,4 +1,6 @@
 <script setup>
+import { motion as m } from 'motion-v';
+
 
 </script>
 
@@ -6,19 +8,26 @@
 
   <div id="template-header">
     <div id="th-brand">
-      <div>
-        <!-- <img :src="logo" alt="" /> -->
+      <m.div
+      :initial="{ opacity: 0, x: -20 }"
+      :animate="{ opacity: 1, x: 0 }"
+      :transition="{ duration: 0.5, ease: 'easeInOut' }""
+      >
         TheAlphaOnes
-      </div>
+      </m.div>
     </div>
 
-    <div id="nav-links">
+    <m.div id="nav-links"
+      :initial="{ opacity: 0, x: 20 }"
+      :animate="{ opacity: 1, x: 0 }"
+      :transition="{ duration: 0.5, ease: 'easeInOut' }""
+    >
       <NuxtLink to="/" class="nav-link"> Home </NuxtLink>
 
       <!-- <NuxtLink to="/" class="nav-link"> Docs </NuxtLink> -->
 
       <NuxtLink to="https://discord.gg/BafRxadauZ" class="nav-link"> Community </NuxtLink>
-    </div>
+    </m.div>
   </div>
 </template>
 

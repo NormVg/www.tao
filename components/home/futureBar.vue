@@ -1,5 +1,17 @@
+  <script setup>
+  import { motion as m } from 'motion-v';
+
+
+  </script>
+
+
 <template>
-  <div class="future-bar-box">
+  <m.div class="future-bar-box"
+  :initial="{ opacity: 0, y: 20 ,filter: 'blur(10px)'}"
+      :animate="{ opacity: 1, y: 0 ,filter: 'blur(0px)'}"
+      :transition="{ duration: 0.6, ease: 'easeInOut' }""
+
+  >
     <div class="fb-bar">
       FUTURE • FUTURE • FUTURE • FUTURE • FUTURE • FUTURE • FUTURE • FUTURE •
       FUTURE • FUTURE • FUTURE • FUTURE • FUTURE • FUTURE • FUTURE • FUTURE •
@@ -82,10 +94,8 @@
       FUTURE • FUTURE • FUTURE • FUTURE • FUTURE • FUTURE • FUTURE • FUTURE •
       FUTURE • FUTURE •
     </div>
-  </div>
+  </m.div>
 </template>
-
-<script setup></script>
 
 <style scoped>
 .future-bar-box {
@@ -104,6 +114,7 @@
   font-weight: bold;
   text-wrap-mode: nowrap;
   animation: marquee-vertical 40s linear infinite ;
+
 }
 
 .bar2 {
@@ -131,5 +142,15 @@
     transform: translate(100%)  scaleX(-1);
   }
 }
+
+
+@media only screen and (max-width: 768px) {
+.future-bar-box {
+
+  -webkit-text-fill-color: #4A4A4A;
+}
+
+}
+
 
 </style>

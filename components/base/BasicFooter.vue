@@ -3,15 +3,17 @@
 <template>
 
   <div id="footer">
-    <div id="f-head">Made with ❤️ By <NuxtLink>TheAlphaOnes</NuxtLink></div>
+    <div id="f-head">Made with ❤️ By <NuxtLink to="https://www.taohq.org">TheAlphaOnes</NuxtLink></div>
     <div id="f-sub">
       <NuxtLink to="https://x.com/TheNormVg"> twitter </NuxtLink>
       •
       <NuxtLink to="https://www.youtube.com/@thenormvg"> youtube </NuxtLink>
       •
       <NuxtLink to="mailto:thealphaones.work@gmail.com"> email </NuxtLink>
-      <!-- •
-      <NuxtLink> discord </NuxtLink> -->
+      •
+      <NuxtLink to="https://discord.gg/BafRxadauZ"> discord </NuxtLink>
+      •
+      <NuxtLink to="https://github.com/TheAlphaOnes/"> github </NuxtLink>
 
     </div>
   </div>
@@ -71,5 +73,6 @@ a:hover {
   border: none;
 
 }
+
 
 </style>
