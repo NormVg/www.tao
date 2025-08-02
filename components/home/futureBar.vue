@@ -114,11 +114,16 @@
   font-weight: bold;
   text-wrap-mode: nowrap;
   animation: marquee-vertical 40s linear infinite ;
+  border: 1px solid salmon;
+  /* width: max-content; */
+
 
 }
 
 .bar2 {
   animation: marquee-vertical2 40s linear infinite ;
+  border: 1px solid green;
+
 
 }
 
@@ -149,6 +154,10 @@
 
   -webkit-text-fill-color: #4A4A4A;
 }
+
+
+
+
 
 }
 

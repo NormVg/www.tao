@@ -3,7 +3,7 @@ import FlowerRing from "~/assets/flower-ring.png";
 import Flower from "~/assets/flower.png";
 
 
-import FutureBar from "./futureBar.vue";
+import FutureBar2 from "./futureBar2.vue";
 import { motion as m } from "motion-v";
 
 
@@ -46,7 +46,7 @@ import { motion as m } from "motion-v";
 
   <div class="border">
 
-    <FutureBar/>
+    <FutureBar2/>
   </div>
 
 
