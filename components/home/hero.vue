@@ -62,7 +62,7 @@ import { motion as m } from "motion-v";
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 120px;
+  margin-top: 200px;
 }
 
 .flower-ring {
