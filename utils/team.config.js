@@ -9,13 +9,13 @@ const foundingMembers = [
   {
     name: 'Akshat',
     role: 'Co-Founder & COO',
-    website: 'https://vishnu.taohq.org',
+    website: 'https://www.linkedin.com/in/akshat-khare-0a5125289',
     image: '/team/akshat.jpeg',
   },
   {
     name: 'Saurav',
     role: 'Co-Founder & CTO',
-    website: 'https://vishnu.taohq.org',
+    website: 'https://hyperingenious-tech.vercel.app/',
     image: '/team/saurav.jpeg',
   },
   {
