@@ -45,7 +45,7 @@ import { motion as m } from "motion-v";
       </m.div>
     </main>
 
-    <img :src="FlowerRing" alt="" class="flower-ring"
+    <img :src="FlowerRing" alt="Decorative flower ring spinning animation" class="flower-ring"
 
     />
   </div>

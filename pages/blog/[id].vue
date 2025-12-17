@@ -1,5 +1,6 @@
 <template>
   <BasicPage :is-page="true">
+    <StructuredData v-if="post" type="blogPosting" :data="post" />
     <div v-if="post" class="blog-post-container">
       <!-- Back Button -->
       <m.div
@@ -82,11 +83,13 @@ import { motion as m } from 'motion-v'
 import { computed, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import BasicPage from '~/components/base/BasicPage.vue'
+import StructuredData from '~/components/seo/StructuredData.vue'
 import { blogPosts } from '~/utils/blog.config.js'
 import 'highlight.js/styles/github-dark.css'
 
 const route = useRoute()
 const postId = route.params.id
+const baseUrl = 'https://www.taohq.org'
 
 // Find the blog post by ID
 const post = computed(() => {
@@ -109,15 +112,40 @@ if (post.value && post.value.mdFile) {
     })
 }
 
-// Set SEO meta tags
+// Set comprehensive SEO meta tags
 if (post.value) {
+  const postUrl = `${baseUrl}/blog/${post.value.id}`
+  const postImage = `${baseUrl}/og.png`
+
   useSeoMeta({
-    title: `${post.value.title} — TheAlphaOnes Blog`,
+    title: `${post.value.title} | TheAlphaOnes Blog`,
     description: post.value.excerpt,
-    ogTitle: `${post.value.title} — TheAlphaOnes Blog`,
-    ogDescription: post.value.excerpt
+    ogTitle: post.value.title,
+    ogDescription: post.value.excerpt,
+    ogImage: postImage,
+    ogUrl: postUrl,
+    ogType: 'article',
+    articlePublishedTime: post.value.date,
+    articleModifiedTime: post.value.date,
+    articleAuthor: post.value.author,
+    articleTag: post.value.tags,
+    twitterCard: 'summary_large_image',
+    twitterTitle: post.value.title,
+    twitterDescription: post.value.excerpt,
+    twitterImage: postImage,
+    twitterSite: '@thenormvg',
+    keywords: post.value.tags?.join(', '),
+    author: post.value.author,
+    robots: 'index, follow',
+  })
+
+  useHead({
+    link: [
+      { rel: 'canonical', href: postUrl }
+    ]
   })
 }
+
 </script>
 
 <style scoped>

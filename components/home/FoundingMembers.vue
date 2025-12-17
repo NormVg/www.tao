@@ -46,7 +46,7 @@ import { foundingMembers } from '~/utils/team.config.js'
           class="member-card"
         >
           <div class="card-container">
-            <img :src="member.image" :alt="member.name" class="member-image">
+            <img :src="member.image" :alt="`${member.name} - ${member.role} at TheAlphaOnes`" class="member-image">
             <div class="card-overlay">
               <div class="member-info">
                 <h3 class="member-name">{{ member.name }}</h3>

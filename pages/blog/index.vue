@@ -53,11 +53,29 @@ import BasicPage from '~/components/base/BasicPage.vue'
 import BlogCard from '~/components/card/BlogCard.vue'
 import { blogPosts } from '~/utils/blog.config.js'
 
+const baseUrl = 'https://www.taohq.org'
+
 useSeoMeta({
-  title: 'Blog — TheAlphaOnes',
-  description: 'Insights on building the future of software, developer tools, and AI from TheAlphaOnes team.',
-  ogTitle: 'Blog — TheAlphaOnes',
-  ogDescription: 'Insights on building the future of software, developer tools, and AI from TheAlphaOnes team.'
+  title: 'Blog | TheAlphaOnes - Developer Tools, AI & Tech Insights',
+  description: 'Insights on building the future of software, developer tools, and AI. Learn about COOK CLI, modern development practices, and cutting-edge technology from TheAlphaOnes team.',
+  ogTitle: 'TheAlphaOnes Blog - Developer Tools & AI Insights',
+  ogDescription: 'Insights on building the future of software, developer tools, and AI. Learn about COOK CLI, modern development practices, and cutting-edge technology.',
+  ogImage: `${baseUrl}/og.png`,
+  ogUrl: `${baseUrl}/blog`,
+  ogType: 'website',
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'TheAlphaOnes Blog - Developer Tools & AI Insights',
+  twitterDescription: 'Insights on building the future of software, developer tools, and AI',
+  twitterImage: `${baseUrl}/og.png`,
+  twitterSite: '@thenormvg',
+  keywords: 'developer tools, COOK CLI, AI projects, software development, tech blog, programming insights, developer productivity',
+  robots: 'index, follow',
+})
+
+useHead({
+  link: [
+    { rel: 'canonical', href: `${baseUrl}/blog` }
+  ]
 })
 </script>
 

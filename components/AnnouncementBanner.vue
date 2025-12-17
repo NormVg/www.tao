@@ -12,7 +12,7 @@ import { announcement } from '~/utils/announcement.config.js'
     rel="noopener noreferrer"
     class="announcement-banner"
   >
-    <img :src="StarIcon" alt="star" class="banner-icon">
+    <img :src="StarIcon" alt="Star icon" class="banner-icon">
     <span class="banner-text">{{ announcement.text }}</span>
     <div class="banner-right">
       <span v-if="announcement.showDot" class="live-dot"></span>

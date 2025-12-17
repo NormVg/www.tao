@@ -1,2 +1,16 @@
-User-Agent: *
-Disallow:
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://www.taohq.org/sitemap.xml
+
+# General settings
+User-agent: *
+Disallow: /api/
+Disallow: /_nuxt/
+Disallow: /server/
+
+# Allow crawling of public resources
+Allow: /og.png
+Allow: /favicon.svg
+Allow: /team/
