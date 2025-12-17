@@ -24,9 +24,9 @@ import { motion as m } from 'motion-v';
       :animate="{ opacity: 1, x: 0 }"
       :transition="{ duration: 0.5, ease: 'easeInOut' }"
     >
-      <NuxtLink to="https://accounts.taohq.org" class="nav-link"> Login </NuxtLink>
-
       <NuxtLink to="/blog" class="nav-link"> Blog </NuxtLink>
+
+      <NuxtLink to="https://accounts.taohq.org" class="nav-link"> Login </NuxtLink>
     </m.div>
   </div>
 </template>

@@ -3,9 +3,10 @@
 
   <Hero/>
   <Intro/>
+  <FoundingMembers/>
   <ForYou/>
   <FeaturedBlog/>
-  <FoundingMembers/>
+  <FlowerEnd/>
 </BasicPage>
 </template>
 
@@ -16,6 +17,7 @@ import Hero from '~/components/home/hero.vue';
 import Intro from '~/components/home/Intro.vue';
 import FeaturedBlog from '~/components/home/FeaturedBlog.vue';
 import FoundingMembers from '~/components/home/FoundingMembers.vue';
+import FlowerEnd from '~/components/home/FlowerEnd.vue';
 
 
 </script>
