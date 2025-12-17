@@ -5,6 +5,7 @@
   <Intro/>
   <ForYou/>
   <FeaturedBlog/>
+  <FoundingMembers/>
 </BasicPage>
 </template>
 
@@ -14,6 +15,7 @@ import ForYou from '~/components/home/ForYou.vue';
 import Hero from '~/components/home/hero.vue';
 import Intro from '~/components/home/Intro.vue';
 import FeaturedBlog from '~/components/home/FeaturedBlog.vue';
+import FoundingMembers from '~/components/home/FoundingMembers.vue';
 
 
 </script>

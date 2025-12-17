@@ -1,12 +1,9 @@
 <script setup>
 import FlowerRing from "~/assets/flower-ring.png";
 import Flower from "~/assets/flower.png";
-
-
 import FutureBar2 from "./futureBar2.vue";
+import AnnouncementBanner from "~/components/AnnouncementBanner.vue";
 import { motion as m } from "motion-v";
-
-
 </script>
 
 <template>
@@ -20,22 +17,31 @@ import { motion as m } from "motion-v";
       <m.div class="head"
       :initial="{ opacity: 0, y: 20 ,filter: 'blur(10px)'}"
       :animate="{ opacity: 1, y: 0 ,filter: 'blur(0px)'}"
-      :transition="{ duration: 0.3,delay:0.2, ease: 'easeInOut' }"
+      :transition="{ duration: 0.3, delay: 0.1, ease: 'easeInOut' }"
 
       >TheAlphaOnes</m.div>
       <m.div class="sub"
       :initial="{ opacity: 0, y: 20 ,filter: 'blur(10px)'}"
       :animate="{ opacity: 1, y: 0 ,filter: 'blur(0px)'}"
-      :transition="{ duration: 0.3,delay:0.4, ease: 'easeInOut' }"
+      :transition="{ duration: 0.3, delay: 0.2, ease: 'easeInOut' }"
 
       >
         <!-- driven by innovation, passion, and a deep love for technology. Our goal
         is to create solutions that enhance lives, spark innovation, and push
-        the boundaries of what’s possible. -->
+        the boundaries of what's possible. -->
 
         Crafting meaningful experiences designed to resonate deeply, spark curiosity and leave a lasting impact.
 
         <!-- Crafting meaningful experiences designed to resonate deeply, spark curiosity,br and leave a lasting impact, built to stand the test of time. -->
+      </m.div>
+
+      <m.div
+        class="announcement-wrapper"
+        :initial="{ opacity: 0, y: 20, filter: 'blur(10px)' }"
+        :animate="{ opacity: 1, y: 0, filter: 'blur(0px)' }"
+        :transition="{ duration: 0.3, delay: 0.3, ease: 'easeInOut' }"
+      >
+        <AnnouncementBanner />
       </m.div>
     </main>
 
@@ -68,9 +74,9 @@ import { motion as m } from "motion-v";
 .flower-ring {
   position: absolute;
 
-  margin-top: 10px;
+  margin-bottom: 10px;
   opacity: 0.25;
-  width: 400px;
+  width: 500px;
   animation: roate 20s linear infinite;
   pointer-events: none;
   z-index: 0;
@@ -82,7 +88,12 @@ main {
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  gap: 5px;
+  z-index: 1;
+}
 
+.announcement-wrapper {
+  margin-top: 30px;
 }
 
 .head {
@@ -135,8 +146,20 @@ main {
   }
 
   .flower-ring {
+    margin-bottom: 80px;
     width: 80%;
+    left: 50%;
+    transform: translateX(-50%) rotate(0deg);
+    animation: roate-mobile 20s linear infinite;
+  }
 
+  @keyframes roate-mobile {
+    from {
+      transform: translateX(-50%) rotate(0deg);
+    }
+    to {
+      transform: translateX(-50%) rotate(360deg);
+    }
   }
 
   .pre {

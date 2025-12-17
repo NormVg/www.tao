@@ -125,6 +125,9 @@ if (post.value) {
   max-width: 800px;
   margin: 0 auto;
   padding: 0 20px;
+  overflow-x: hidden;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .back-button {
@@ -157,6 +160,8 @@ if (post.value) {
   flex-direction: column;
   gap: 20px;
   align-items: center;
+  width: 100%;
+  max-width: 100%;
 }
 
 .post-meta {
@@ -176,6 +181,8 @@ if (post.value) {
   color: whitesmoke;
   margin: 0;
   line-height: 1.2;
+  max-width: 100%;
+  word-wrap: break-word;
 }
 
 .post-tags {
@@ -203,6 +210,14 @@ if (post.value) {
   line-height: 1.8;
   font-size: 18px;
   margin-bottom: 60px;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.post-content :deep(*) {
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
 /* Markdown Content Styling */
@@ -265,6 +280,8 @@ if (post.value) {
   margin: 2em 0;
   overflow-x: auto;
   position: relative;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .post-content :deep(pre code) {
@@ -274,6 +291,8 @@ if (post.value) {
   color: inherit;
   font-size: 14px;
   line-height: 1.6;
+  white-space: pre;
+  display: block;
 }
 
 .post-content :deep(blockquote) {

@@ -27,8 +27,6 @@ import { motion as m } from 'motion-v';
       <NuxtLink to="https://accounts.taohq.org" class="nav-link"> Login </NuxtLink>
 
       <NuxtLink to="/blog" class="nav-link"> Blog </NuxtLink>
-
-      <NuxtLink to="https://discord.gg/BafRxadauZ" class="nav-link"> Community </NuxtLink>
     </m.div>
   </div>
 </template>
