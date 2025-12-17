@@ -48,7 +48,7 @@ const featuredPosts = blogPosts.slice(0, 2)
             <div class="tags">
               <span v-for="tag in post.tags.slice(0, 2)" :key="tag" class="tag">{{ tag }}</span>
             </div>
-            <span class="read-link">Read More →</span>
+            <span class="read-time">{{ post.readTime }}</span>
           </div>
         </NuxtLink>
       </m.div>
@@ -62,7 +62,7 @@ const featuredPosts = blogPosts.slice(0, 2)
       :in-view-options="{ amount: 1, once: true }"
     >
       <NuxtLink to="/blog" class="view-all-link">
-        View All Posts →
+        View All Posts
       </NuxtLink>
     </m.div>
   </div>
@@ -185,15 +185,10 @@ const featuredPosts = blogPosts.slice(0, 2)
   font-weight: 500;
 }
 
-.read-link {
-  font-size: 14px;
-  color: var(--pink);
+.read-time {
+  font-size: 13px;
+  color: var(--fg2);
   font-weight: 500;
-  transition: transform 0.2s ease;
-}
-
-.blog-post-item:hover .read-link {
-  transform: translateX(3px);
 }
 
 .view-all {
@@ -202,19 +197,20 @@ const featuredPosts = blogPosts.slice(0, 2)
 
 .view-all-link {
   display: inline-block;
-  font-size: 16px;
-  color: var(--pink);
+  font-size: 15px;
+  color: var(--white);
   text-decoration: none;
-  font-weight: 600;
-  padding: 15px 35px;
-  border: 1px solid var(--pink);
-  border-radius: 30px;
+  font-weight: 500;
+  padding: 12px 28px;
+  border: 1px solid var(--border);
+  border-radius: 25px;
   transition: all 0.2s ease;
+  letter-spacing: 0.3px;
 }
 
 .view-all-link:hover {
-  background: rgba(251, 113, 133, 0.1);
-  transform: translateY(-2px);
+  border-color: var(--pink);
+  color: var(--pink);
 }
 
 @media only screen and (max-width: 768px) {

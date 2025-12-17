@@ -8,7 +8,7 @@
         :animate="{ opacity: 1, x: 0 }"
         :transition="{ duration: 0.3, ease: 'easeInOut' }"
       >
-        <NuxtLink to="/blog" class="back-link">← Back to Blog</NuxtLink>
+        <NuxtLink to="/blog" class="back-link">Back to Blog</NuxtLink>
       </m.div>
 
       <!-- Post Header -->
@@ -65,14 +65,14 @@
             <span class="author-label">Written by</span>
             <span class="author-name">{{ post.author }}</span>
           </div>
-          <NuxtLink to="/blog" class="back-to-blog">← Back to all posts</NuxtLink>
+          <NuxtLink to="/blog" class="back-to-blog">Back to all posts</NuxtLink>
         </m.footer>
       </article>
     </div>
 
     <div v-else class="not-found">
       <h1>Blog post not found</h1>
-      <NuxtLink to="/blog" class="back-link">← Back to Blog</NuxtLink>
+      <NuxtLink to="/blog" class="back-link">Back to Blog</NuxtLink>
     </div>
   </BasicPage>
 </template>

@@ -60,7 +60,6 @@ const props = defineProps({
 
             <div class="read-info">
               <span class="read-time">{{ props.readTime }}</span>
-              <span class="arrow-icon">→</span>
             </div>
           </div>
         </div>
@@ -190,16 +189,6 @@ const props = defineProps({
   font-size: 13px;
   color: var(--fg2);
   font-weight: 500;
-}
-
-.arrow-icon {
-  font-size: 18px;
-  color: var(--pink);
-  transition: transform 0.2s ease;
-}
-
-.blog-card:hover .arrow-icon {
-  transform: translateX(3px);
 }
 
 @media only screen and (max-width: 768px) {
