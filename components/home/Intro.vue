@@ -11,7 +11,7 @@ import { motion as m } from 'motion-v';
     <m.div class="head"
     :initial="{ opacity: 0, y: 20 ,filter: 'blur(10px)'}"
     :while-in-view="{ opacity: 1, y: 0 ,filter: 'blur(0px)'}"
-    :transition="{ duration: 0.4,delay:0.3, ease: 'easeInOut' }""
+    :transition="{ duration: 0.4,delay:0.3, ease: 'easeInOut' }"
     :in-view-options="{amount:1,once: true}"
 
 
@@ -20,7 +20,7 @@ import { motion as m } from 'motion-v';
     <m.div class="sub"
     :initial="{ opacity: 0, y: 20 ,filter: 'blur(10px)'}"
     :while-in-view="{ opacity: 1, y: 0 ,filter: 'blur(0px)'}"
-    :transition="{ duration: 0.4,delay:0.4, ease: 'easeInOut' }""
+    :transition="{ duration: 0.4,delay:0.4, ease: 'easeInOut' }"
     :in-view-options="{amount:1,once: true}"
 
     >

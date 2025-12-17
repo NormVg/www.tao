@@ -15,18 +15,18 @@ import { motion as m } from "motion-v";
       <m.div class="pre"
       :initial="{ opacity: 0, y: 20 ,filter: 'blur(10px)'}"
       :animate="{ opacity: 1, y: 0 ,filter: 'blur(0px)'}"
-      :transition="{ duration: 0.3, ease: 'easeInOut' }""
+      :transition="{ duration: 0.3, ease: 'easeInOut' }"
       >We are</m.div>
       <m.div class="head"
       :initial="{ opacity: 0, y: 20 ,filter: 'blur(10px)'}"
       :animate="{ opacity: 1, y: 0 ,filter: 'blur(0px)'}"
-      :transition="{ duration: 0.3,delay:0.2, ease: 'easeInOut' }""
+      :transition="{ duration: 0.3,delay:0.2, ease: 'easeInOut' }"
 
       >TheAlphaOnes</m.div>
       <m.div class="sub"
       :initial="{ opacity: 0, y: 20 ,filter: 'blur(10px)'}"
       :animate="{ opacity: 1, y: 0 ,filter: 'blur(0px)'}"
-      :transition="{ duration: 0.3,delay:0.4, ease: 'easeInOut' }""
+      :transition="{ duration: 0.3,delay:0.4, ease: 'easeInOut' }"
 
       >
         <!-- driven by innovation, passion, and a deep love for technology. Our goal

@@ -25,148 +25,171 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="apps-card" >
-    <main>
-      <m.div class="head"
-          :initial="{ opacity: 0, y: 20 ,filter: 'blur(10px)'}"
-          :while-in-view="{ opacity: 1, y: 0 ,filter: 'blur(0px)'}"
-          :transition="{ duration: 0.3,delay:0.3, ease: 'easeInOut' }""
-          :in-view-options="{amount:1,once: true}"
-            >
+  <m.div
+    class="app-card-wrapper"
+    :initial="{ opacity: 0, y: 20, filter: 'blur(10px)' }"
+    :while-in-view="{ opacity: 1, y: 0, filter: 'blur(0px)' }"
+    :transition="{ duration: 0.4, delay: 0.2, ease: 'easeInOut' }"
+    :in-view-options="{ amount: 0.2, once: true }"
+  >
+    <div class="app-card">
+      <div class="card-content">
+        <div class="card-header">
+          <div class="title-row">
+            <h3 class="card-title">{{ props.head }}</h3>
+            <NuxtLink :to="props.link" class="external-link" target="_blank">
+              <ExternalLink :size="22"/>
+            </NuxtLink>
+          </div>
+          <span class="product-badge">Product</span>
+        </div>
 
-            {{ props.head }}
-          <NuxtLink :to="props.link"> <ExternalLink size="20"/>  </NuxtLink>
+        <p class="card-description">{{ props.sub }}</p>
+      </div>
 
-      </m.div>
+      <div class="card-image">
+        <img :src="props.thumb" alt="" class="thumb">
+      </div>
+    </div>
 
-      <m.div class="sub"
-    :initial="{ opacity: 0, y: 20 ,filter: 'blur(10px)'}"
-    :while-in-view="{ opacity: 1, y: 0 ,filter: 'blur(0px)'}"
-    :transition="{ duration: 0.3,delay:0.6, ease: 'easeInOut' }""
-    :in-view-options="{amount:0.2,once: true}"
-
-      >
-        {{props.sub}}
-
-      </m.div>
-    </main>
-    <m.img
-    :initial="{ opacity: 0, y: 20 ,filter: 'blur(10px)'}"
-    :while-in-view="{ opacity: 1, y: 0 ,filter: 'blur(0px)'}"
-    :transition="{ duration: 0.3,delay:0.3, ease: 'easeInOut' }""
-    :in-view-options="{amount:0.2,once: true}"
-    :src="props.thumb" alt="" class="thumb"
-    >
-
-  </m.img>
-
-
-
-  </div>
-
-  <div class="btm-line" v-if="props.bottomLine"></div>
+    <div class="divider" v-if="props.bottomLine"></div>
+  </m.div>
 </template>
 
 <style scoped>
-
-.apps-card{
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  width: 90vw;
-  margin: 0 auto;
-  gap: 20px;
+.app-card-wrapper {
+  max-width: 1200px;
+  margin: 0 auto 80px;
+  padding: 0 20px;
 }
-/*
-.head *{
-  border: 1px solid salmon;
+
+.app-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  background: transparent;
+  border: none;
+  padding: 0;
 }
- */
 
-
-main{
+.card-content {
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
   flex-direction: column;
-
-  gap: 20px;
-
+  gap: 25px;
 }
 
-.head a{
+.card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.title-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.card-title {
+  font-size: 52px;
+  font-weight: 700;
+  color: whitesmoke;
+  margin: 0;
+  font-family: var(--font-k2d);
+  line-height: 1.1;
+}
+
+.external-link {
+  color: var(--white);
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
+.external-link:hover {
+  color: var(--pink);
+  opacity: 1;
+  transform: translateY(-3px);
+}
+
+.product-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  font-size: 11px;
+  color: var(--fg2);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 500;
+  width: fit-content;
+}
+
+.card-description {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--white);
+  margin: 0;
+  opacity: 0.85;
+}
+
+.card-image {
+  position: relative;
+  border-radius: 8px 25px 8px 25px;
+  overflow: hidden;
+  border: 1px solid rgba(74, 74, 74, 0.15);
+  transition: all 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease-in-out;
+  background: rgba(255, 255, 255, 0.02);
 }
 
-
-.head a:hover{
-  margin-bottom: 10px;
+.card-image:hover {
+  border-color: rgba(224, 160, 168, 0.25);
 }
 
-
-.head{
-  font-size: 40px;
-  /* border: 1px solid salmon; */
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 20px;
-  color: whitesmoke;
-  font-weight: bold;
-}
-
-.sub{
-  width: 85%;
-}
-.thumb{
-  width: 400px;
+.thumb {
+  width: 100%;
+  height: auto;
+  display: block;
   aspect-ratio: 550/309;
-  border: 1px solid #4A4A4A50;
-  border-radius: 5px 20px 5px 20px;
+  object-fit: cover;
+  max-height: 280px;
 }
 
-.btm-line{
+.divider {
   height: 1px;
-  width: 85vw;
-  border-bottom: 1px solid var(--border);
-  margin: 70px auto;
-
-
+  background: var(--border);
+  margin: 80px 0;
+  width: 100%;
 }
 
 @media only screen and (max-width: 768px) {
-.apps-card{
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  flex-direction: column;
-  flex-direction: column-reverse;
-  width: 100%;
-  margin: 0 auto;
-  gap: 20px;
+  .app-card-wrapper {
+    margin-bottom: 50px;
+    padding: 0 10px;
+  }
+
+  .app-card {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .card-title {
+    font-size: 36px;
+  }
+
+  .card-description {
+    font-size: 15px;
+  }
+
+  .divider {
+    margin: 50px 0;
+  }
 }
-
-.thumb{
-  width: 90%;
-  aspect-ratio: 550/309;
-  align-self: center;
-}
-.sub{
-  width: 100%;
-  /* width: 90%; */
-
-
-}
-
-main{
-align-self: center;
-  width: 90%;
-
-}
-
-}
-
 </style>

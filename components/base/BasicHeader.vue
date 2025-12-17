@@ -8,23 +8,25 @@ import { motion as m } from 'motion-v';
 
   <div id="template-header">
     <div id="th-brand">
-      <m.div
-      :initial="{ opacity: 0, x: -20 }"
-      :animate="{ opacity: 1, x: 0 }"
-      :transition="{ duration: 0.5, ease: 'easeInOut' }""
-      >
-        TheAlphaOnes
-      </m.div>
+      <NuxtLink to="/" class="brand-link">
+        <m.div
+        :initial="{ opacity: 0, x: -20 }"
+        :animate="{ opacity: 1, x: 0 }"
+        :transition="{ duration: 0.5, ease: 'easeInOut' }"
+        >
+          TheAlphaOnes
+        </m.div>
+      </NuxtLink>
     </div>
 
     <m.div id="nav-links"
       :initial="{ opacity: 0, x: 20 }"
       :animate="{ opacity: 1, x: 0 }"
-      :transition="{ duration: 0.5, ease: 'easeInOut' }""
+      :transition="{ duration: 0.5, ease: 'easeInOut' }"
     >
       <NuxtLink to="https://accounts.taohq.org" class="nav-link"> Login </NuxtLink>
 
-      <!-- <NuxtLink to="/" class="nav-link"> Docs </NuxtLink> -->
+      <NuxtLink to="/blog" class="nav-link"> Blog </NuxtLink>
 
       <NuxtLink to="https://discord.gg/BafRxadauZ" class="nav-link"> Community </NuxtLink>
     </m.div>
@@ -54,6 +56,12 @@ import { motion as m } from 'motion-v';
   align-items: center;
   gap: 10px;
   /* border: 1px solid saddlebrown; */
+}
+
+.brand-link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
 }
 
 #th-brand img {
